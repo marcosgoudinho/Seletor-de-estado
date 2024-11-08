@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Municípios deste Estado</title>
+            <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <header>
+            <h1>Consulta Municípios por UF</h1>
+        </header>
+
+        <body>
+
+            <div id="municipios">
+                <p>Carregando cidades...</p>
+            </div>
+
+            <button id="voltar">Voltar para a Página Inicial</button>
+
+            <script>
+                $(document).ready(function() {
+    //Recupera o ID do estado no localStorage
+    const estadoId = localStorage.getItem('estadoId');
+    if (estadoId) {
+        //Busca as cidades do estado selecionado
+        $.ajax({
+            url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}/municipios`,
+            method: 'GET',
+            success: function(data) {
+                const municipios = data;
+                let content = '<ul>';
+                municipios.forEach(function(municipio) {
+                    content += `<li>${municipio.nome}</li>`;
+                });
+                content += '</ul>';
+                $('#municipios').html(content);
+            },
+            error: function() {
+                $('#municipios').html('Erro ao carregar as cidades');
+            }
+        });
+    }
+});
+            </script>
+        </body>
+    </html>
