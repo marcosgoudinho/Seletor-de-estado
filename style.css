@@ -1,4 +1,3 @@
-/* Estilo global */
 * {
     margin: 0;
     padding: 0;
@@ -15,26 +14,49 @@ body {
     background-color: #f4f4f9;
 }
 
-/* Estilo do título */
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+.body_cidades {
+    padding-top: 60px;
+}
+
+.header_index {
+    position: fixed;
+    font-size: 30px;
+    top: 0; /* Fixa o header no topo da página */
+    left: 0;
+    width: 100%; /* Faz o header ocupar toda a largura da página */
+    background-color: #333; /* Cor de fundo do header */
+    color: #fff; /* Cor do texto */
+    padding: 15px;
+    text-align: center; /* Centraliza o texto */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header_cidades {
+    position: fixed;
+    font-size: 30px;
+    top: 0; /* Fixa o header no topo da página */
+    width: 100%; /* Faz o header ocupar toda a largura da página */
+    background-color: #333; /* Cor de fundo do header */
+    color: #fff; /* Cor do texto */
+    padding: 15px;
+    text-align: center; /* Centraliza o texto */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo do seletor de estados */
 #estados {
     width: 250px;
-    padding: 10px;
+    padding: 5px;
     font-size: 16px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* Estilo do botão de confirmação */
 #selecionar {
-    padding: 10px 20px;
+    padding: 5px 20px;
     font-size: 16px;
     background-color: #4CAF50;
     color: white;
@@ -48,12 +70,36 @@ h1 {
     background-color: #45a049;
 }
 
-/* Adicionar espaçamento e centralizar conteúdo */
-.container {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#voltar {
+    position: absolute; /* Posiciona o botão de forma absoluta */
+    top: 22px;          /* Define a distância do topo da página */
+    left: 10px;         /* Define a distância da esquerda da página */
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+#voltar:hover {
+    background-color: #45a049; /* Cor de fundo no hover */
+}
+
+.estado_selecao {
+    margin-top: 70px;
+}
+
+.subtitle_index {
+ /* Espaço à direita do texto */
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: -70px;
+}
+
+#municipios {
+    padding-top: 55px;
 }
